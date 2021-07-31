@@ -34,6 +34,8 @@ test_iterable_non_exhaustive - checks if the polygons iterator is exhaustible or
 object when iter is called 
 
 test_iterable_stop_exception - checks if StopIteration exception is raised when reaching end of iterable
+
+test_max_efficiency_polygon - checks if max_efficiency_polygon returns correct value
 ### Test results
  pytest -v
 ============================= test session starts ==============================
@@ -41,13 +43,14 @@ platform darwin -- Python 3.8.1, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /usr/
 cachedir: .pytest_cache
 rootdir: /Users/Krish/Downloads/epai/epai-session12
 plugins: Faker-4.1.3, anyio-3.2.1
-collected 6 items                                                              
+collected 7 items                                                              
 
-test_polygon.py::test_polygon PASSED                                     [ 16%]
-test_polygon.py::test_polygons PASSED                                    [ 33%]
-test_polygon.py::test_iterable PASSED                                    [ 50%]
-test_polygon.py::test_polygons_functions PASSED                          [ 66%]
-test_polygon.py::test_iterable_non_exhaustive PASSED                     [ 83%]
-test_polygon.py::test_iterable_stop_exception PASSED                     [100%]
+test_polygon.py::test_polygon PASSED                                     [ 14%]
+test_polygon.py::test_polygons_value_error PASSED                        [ 28%]
+test_polygon.py::test_iterable PASSED                                    [ 42%]
+test_polygon.py::test_polygons_functions PASSED                          [ 57%]
+test_polygon.py::test_iterable_non_exhaustive PASSED                     [ 71%]
+test_polygon.py::test_iterable_stop_exception PASSED                     [ 85%]
+test_polygon.py::test_max_efficiency_polygon PASSED                      [100%]
 
-============================== 6 passed in 0.15s ===============================
+============================== 7 passed in 0.13s ===============================

@@ -86,7 +86,7 @@ def test_polygon():
     assert p4 == p5
 
 
-def test_polygons():
+def test_polygons_value_error():
     with pytest.raises(ValueError):
         p = Polygons(2,3)
 
@@ -97,13 +97,6 @@ def test_iterable():
         print(p)
 
 
-# def test_index():
-#     p = Polygons(5, 10)
-#     print(len(p))
-#     for i in range(len(p)):
-#         print(p[i])
-
-
 def test_polygons_functions():
     p = Polygons(5, 10)
     assert '__next__' in dir(iter(p))
@@ -111,22 +104,26 @@ def test_polygons_functions():
     assert '__iter__' in dir(p)
 
 
-# def test_iterable_non_exhaustive():
-#     polygons = Polygons(4, 10)
-#     p1 = next(iter(polygons))
-#     p2 = next(iter(polygons))
-#     assert p1 == p2
-#     _iter = iter(polygons)
-#     p1 = next(_iter)
-#     p2 = next(_iter)
-#     assert p1 != p2
-#
-#
-# def test_iterable_stop_exception():
-#     polygons = Polygons(4, 10)
-#     _iter = iter(polygons)
-#     p1 = next(_iter)
-#     p2 = next(_iter)
-#     with pytest.raises(StopIteration):
-#         p3 = next(_iter)
+def test_iterable_non_exhaustive():
+    polygons = Polygons(4, 10)
+    p1 = next(iter(polygons))
+    p2 = next(iter(polygons))
+    assert p1 == p2
+    _iter = iter(polygons)
+    p1 = next(_iter)
+    p2 = next(_iter)
+    assert p1 != p2
 
+
+def test_iterable_stop_exception():
+    polygons = Polygons(4, 10)
+    _iter = iter(polygons)
+    p1 = next(_iter)
+    p2 = next(_iter)
+    with pytest.raises(StopIteration):
+        p3 = next(_iter)
+
+
+def test_max_efficiency_polygon():
+    p = Polygons(5, 10)
+    assert p.max_efficiency_polygon == Polygon(5, 10)

@@ -11,7 +11,7 @@ class Polygons:
         print("after init")
 
     def __len__(self):
-        return self._m - 2
+        return self._m + 1
 
     def __repr__(self):
         return f'Polygons(m={self._m}, R={self._R})'
@@ -21,7 +21,7 @@ class Polygons:
 
     @property
     def max_efficiency_polygon(self):
-        sorted_polygons = sorted(self.PolygonIterator,
+        sorted_polygons = sorted(self.PolygonIterator(self),
                                  key=lambda p: p.area / p.perimeter,
                                  reverse=True)
         return sorted_polygons[0]
