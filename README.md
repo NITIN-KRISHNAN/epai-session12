@@ -1,7 +1,5 @@
 # epai-session12
 
-# Iterators - session 10
-
 ## Goal 1
 Refactor the Polygon class so that all the calculated properties are lazy properties, i.e. they should still be calculated properties, but they should not have to get recalculated more than once (since we made our Polygon class "immutable").
 
